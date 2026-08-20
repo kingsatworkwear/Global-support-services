@@ -144,20 +144,10 @@
     const form = event.target;
     const formData = new FormData(form);
 
-    const data = {
-      naam: formData.get("naam"),
-      email: formData.get("email"),
-      telefoon: formData.get("telefoon"),
-      bericht: formData.get("bericht")
-    };
-
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
+        body: formData
       });
 
       const result = await response.json();
@@ -171,6 +161,7 @@
 
     } catch (error) {
       alert("Er is iets misgegaan bij het versturen.");
+      console.error(error);
     }
   });
 </script>
