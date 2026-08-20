@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | Global Support Services</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="header">
+  <a class="brand" href="index.html">
+    <img src="logo.jpeg/logo.jpeg" alt="Global Support Services">
+  </a>
+
+  <nav class="header-nav">
+    <a href="index.html">Home</a>
+    <a href="diensten.html">Diensten</a>
+    <a class="cta" href="contact.html">Neem contact op</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="contact">
+
+    <div class="contact-intro">
+
+      <p class="eyebrow">CONTACT</p>
+
+      <h1>
+        Vraag vrijblijvend<br>
+        een offerte aan.
+      </h1>
+
+      <p>
+        Vertel ons kort wat u nodig heeft. Wij nemen zo snel mogelijk
+        contact met u op voor een duidelijke en vrijblijvende offerte.
+      </p>
+
+      <div class="contact-box">
+        <strong>WhatsApp</strong>
+
+    <img src="./whatssap-logo.png" alt="WhatsApp" class="whatsapp-logo">
+</div>
+
+
+    </div>
+
+
+    <div class="contact-form">
+
+      <h2>Neem contact met ons op</h2>
+
+      <p>
+        Heeft u een vraag of wilt u een vrijblijvende offerte?
+        Vul het formulier hieronder in en wij nemen zo snel mogelijk
+        contact met u op.
+      </p>
+
+    <form id="contact-form" action="/api/contact" method="POST"></form>
+        <label>
+          Naam
+          <input
+            type="text"
+            name="naam"
+            placeholder="Uw naam"
+            required
+          >
+        </label>
+
+        <label>
+          E-mailadres
+          <input
+            type="email"
+            name="email"
+            placeholder="Uw e-mailadres"
+            required
+          >
+        </label>
+
+        <label>
+          Telefoonnummer
+          <input
+            type="tel"
+            name="telefoon"
+            placeholder="Uw telefoonnummer"
+          >
+        </label>
+
+        <label>
+          Bericht
+          <textarea
+            name="bericht"
+            placeholder="Waar kunnen wij u mee helpen?"
+            required
+          ></textarea>
+        </label>
+
+        <button
+          type="submit"
+          class="button primary"
+        >
+          Verstuur aanvraag
+        </button>
+
+      </form>
+
+    </div>
+
+  </section><section class="contact-info">
+
+  <div class="contact-info-item">
+    <span class="contact-info-label">WERKZAAM IN</span>
+    <strong>België & Tenerife</strong>
+    <p>Professionele reiniging en onderhoud op beide locaties.</p>
+  </div>
+
+  <div class="contact-info-item">
+    <span class="contact-info-label">BELGIË</span>
+    <a href="tel:+32494186261">+32 494 18 62 61</a>
+  </div>
+
+  <div class="contact-info-item">
+    <span class="contact-info-label">TENERIFE</span>
+    <a href="tel:+34634324996">+34 634 324 996</a>
+  </div>
+
+  <div class="contact-info-item">
+    <span class="contact-info-label">E-MAIL</span>
+    <a href="mailto:info@global-support-services.com">
+      info@global-support-services.com
+    </a>
+  </div>
+
+</section>
+
+</main>
+<script>
+  document.getElementById("contact-form").addEventListener("submit", async function(event) {
+    event.preventDefault();
+
+    const form = event.target;
+    const formData = new FormData(form);
+
+    const data = {
+      naam: formData.get("naam"),
+      email: formData.get("email"),
+      telefoon: formData.get("telefoon"),
+      bericht: formData.get("bericht")
+    };
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        alert("Bedankt! Uw aanvraag is ontvangen.");
+        form.reset();
+      } else {
+        alert(result.message || "Er is iets misgegaan.");
+      }
+
+    } catch (error) {
+      alert("Er is iets misgegaan bij het versturen.");
+    }
+  });
+</script>
+</body>
+</html>

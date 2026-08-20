@@ -1,0 +1,800 @@
+•⁠  ⁠{
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #20232a;
+    background: #fff;
+}
+
+/* =========================
+   HEADER
+   ========================= */
+
+.header {
+    height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    border-bottom: 1px solid #eee;
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    color: #222;
+    text-decoration: none;
+}
+
+.brand img {
+    height: 72px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.brand-mark {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: #171a1f;
+    color: #d6a62b;
+    font-size: 12px;
+    font-weight: 800;
+    border: 2px solid #d6a62b;
+}
+
+.brand strong {
+    display: block;
+    font-size: 16px;
+    letter-spacing: .5px;
+}
+
+.brand small {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #c79822;
+    margin-top: 3px;
+}
+
+.header nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.header nav a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.header nav a:hover {
+    color: #d9a900;
+}
+
+.header nav a.active {
+    color: #c79822;
+}
+
+.cta {
+    background: #d7a52a;
+    color: #fff !important;
+    padding: 14px 22px;
+    border-radius: 28px;
+}
+
+/* =========================
+   HERO / BANNER HOMEPAGE
+   ========================= */
+
+.hero {
+    min-height: 430px;
+    display: flex;
+    align-items: center;
+    padding: 45px 7%;
+    background: linear-gradient(
+        120deg,
+        #17191d 0%,
+        #272b31 55%,
+        #101114 100%
+    );
+    color: #fff;
+}
+
+.hero-content {
+    max-width: 760px;
+}
+
+.eyebrow {
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 800;
+    color: #d7a52a;
+    margin: 0 0 18px;
+}
+
+.hero h1 {
+    font-size: clamp(44px, 6vw, 76px);
+    line-height: 1.02;
+    margin: 0 0 25px;
+}
+
+.hero h1 span {
+    color: #d7a52a;
+}
+
+.lead {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #ddd;
+    max-width: 650px;
+}
+
+.buttons {
+    display: flex;
+    gap: 14px;
+    margin-top: 32px;
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 24px;
+    border-radius: 28px;
+    text-decoration: none;
+    font-weight: 700;
+    border: 0;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.primary {
+    background: #d7a52a;
+    color: #fff;
+}
+
+.secondary {
+    border: 1px solid #777;
+    color: #fff;
+}
+
+/* =========================
+   INTRO
+   ========================= */
+
+.intro {
+    padding: 80px 7%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+}
+
+.intro h2,
+.banner h2 {
+    font-size: 44px;
+    margin: 0;
+}
+
+.intro > p {
+    font-size: 19px;
+    line-height: 1.7;
+    color: #555;
+    margin: 0;
+}
+
+/* =========================
+   DIENSTENKAARTEN
+   ========================= */
+
+.cards {
+    padding: 0 7% 80px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.cards article {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 14px;
+    padding: 28px;
+    min-height: 230px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+.cards article:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.10);
+}
+
+.cards article h3 {
+    margin: 10px 0 12px;
+    font-size: 22px;
+    line-height: 1.2;
+    color: #222;
+}
+
+.cards article p {
+    margin: 0;
+    color: #555;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.cards article span,
+.cards article .icon,
+.cards article .service-number {
+    color: #c79822;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* =========================
+   EXTRA BANNER
+   ========================= */
+
+.banner {
+    margin: 0 7% 80px;
+    padding: 45px;
+    background: #17191d;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.banner h2 {
+    color: #fff;
+}
+
+/* =========================
+   DIENSTEN PAGINA
+   ========================= */
+
+.page-head {
+    padding: 80px 7% 50px;
+    background: #17191d;
+    color: #fff;
+}
+
+.page-head h1 {
+    font-size: 60px;
+    margin: 0;
+    line-height: 1.05;
+}
+
+.service-list {
+    padding: 15px 7% 90px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 70px;
+}
+
+.service-list article {
+    display: grid;
+    grid-template-columns: 45px 1fr;
+    gap: 15px;
+    padding: 38px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.service-list span {
+    color: #c79822;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.service-list h2 {
+    margin: 0 0 8px;
+}
+
+.service-list p {
+    margin: 0;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* =========================
+   CONTACT
+   ========================= */
+
+.contact {
+    padding: 80px 7%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+.contact h1 {
+    font-size: 58px;
+    line-height: 1.05;
+    margin: 0 0 25px;
+}
+
+.contact > div > p:not(.eyebrow) {
+    color: #666;
+    line-height: 1.7;
+    font-size: 18px;
+    max-width: 520px;
+}
+
+.contact-box {
+    margin-top: 35px;
+    padding: 25px;
+    border-left: 3px solid #d7a52a;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contact-box a {
+    color: #333;
+    font-weight: 700;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+label {
+    font-weight: 700;
+}
+
+input,
+textarea {
+    width: 100%;
+    display: block;
+    margin-top: 7px;
+    border: 1px solid #ccc;
+    padding: 14px;
+    font: inherit;
+    border-radius: 8px;
+}
+
+textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.contact-form {
+    width: 100%;
+    max-width: 620px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 18px;
+    font-weight: 600;
+    color: #222;
+}
+
+.contact-form input,
+.contact-form textarea {
+    display: block;
+    width: 100%;
+    margin-top: 8px;
+    padding: 14px 16px;
+    border: 1px solid #d8d8d8;
+    border-radius: 8px;
+    background: #fff;
+    color: #222;
+    font-family: inherit;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.contact-form textarea {
+    min-height: 150px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #c79822;
+    box-shadow: 0 0 0 3px rgba(199, 152, 34, 0.12);
+}
+
+.contact-form .button,
+.contact-form button {
+    display: inline-block;
+    border: 0;
+    cursor: pointer;
+    padding: 14px 26px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: inherit;
+    background: #d7a52a;
+    color: #fff;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer {
+    padding: 40px 7%;
+    border-top: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    color: #666;
+}
+
+footer .brand {
+    color: #222;
+}
+
+footer .brand img {
+    height: 80px;
+    width: auto;
+}
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media (max-width: 1000px) {
+
+    .cards {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero {
+        min-height: 430px;
+    }
+
+    .hero h1 {
+        font-size: 58px;
+    }
+}
+
+/* =========================
+   MOBIEL
+   ========================= */
+
+@media (max-width: 768px) {
+
+    .header {
+        width: 100%;
+        height: 70px;
+        min-height: 70px;
+        padding: 8px 12px;
+        gap: 8px;
+        overflow: visible;
+    }
+
+    .brand {
+        flex-shrink: 0;
+    }
+
+    .brand img {
+        height: 80px;
+        width: auto;
+    }
+
+    .header nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 7px;
+        flex: 1;
+        min-width: 0;
+        overflow: visible;
+    }
+
+    .header nav a {
+        display: inline-flex;
+        align-items: center;
+        visibility: visible;
+        opacity: 1;
+        font-size: 11px;
+        font-weight: 600;
+        white-space: nowrap;
+    }
+
+    .header nav .cta {
+        padding: 9px 10px;
+        font-size: 10px;
+        border-radius: 20px;
+    }
+
+    .hero {
+        min-height: 460px;
+        padding: 50px 6%;
+    }
+
+    .hero h1 {
+        font-size: clamp(38px, 11vw, 52px);
+        margin-bottom: 20px;
+    }
+
+    .lead {
+        font-size: 17px;
+        line-height: 1.55;
+    }
+
+    .buttons {
+        flex-wrap: wrap;
+        margin-top: 25px;
+    }
+
+    .button {
+        padding: 13px 20px;
+    }
+
+    .intro,
+    .contact {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 60px 6%;
+    }
+
+    .intro h2 {
+        font-size: 36px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+        padding: 0 20px 65px;
+        gap: 18px;
+    }
+
+    .cards article {
+        width: 100%;
+        min-height: auto;
+        padding: 24px;
+        margin-bottom: 4px;
+    }
+
+    .cards article h3 {
+        font-size: 21px;
+    }
+
+    .cards article p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .banner {
+        margin: 0 6% 65px;
+        padding: 35px 25px;
+        display: block;
+    }
+
+    .banner h2 {
+        font-size: 34px;
+    }
+
+    .banner .button {
+        margin-top: 25px;
+    }
+
+    .page-head {
+        padding: 60px 6% 40px;
+    }
+
+    .page-head h1,
+    .contact h1 {
+        font-size: 42px;
+    }
+
+    .service-list {
+        grid-template-columns: 1fr;
+        padding: 10px 6% 70px;
+    }
+
+    .service-list article {
+        padding: 30px 0;
+    }
+
+    .contact {
+        padding: 45px 20px;
+    }
+
+    .contact-form {
+        width: 100%;
+        max-width: none;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 16px;
+        padding: 14px;
+    }
+
+    .contact-form button {
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    footer {
+        padding: 30px 6%;
+        display: block;
+    }
+
+    footer .brand img {
+        height: 55px;
+    }
+
+    footer p {
+        font-size: 13px;
+    }
+}
+/* =========================
+   DEFINITIEVE HERO
+   ========================= */
+
+.hero {
+    min-height: 360px;
+    padding: 35px 7%;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 5vw, 68px);
+    line-height: 1.02;
+    margin-bottom: 20px;
+}
+
+.hero .lead {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.hero .buttons {
+    margin-top: 25px;
+}
+
+
+/* =========================
+   DEFINITIEF HEADER LOGO
+   ========================= */
+
+.header .brand img {
+    height: 68px;
+    width: auto;
+    max-width: 190px;
+    display: block;
+    object-fit: contain;
+}
+
+
+/* =========================
+   MOBIEL
+   ========================= */
+
+@media (max-width: 768px) {
+
+    .header {
+        height: 70px;
+        min-height: 70px;
+        padding: 8px 12px;
+    }
+
+    .header .brand img {
+        height: 58px;
+        max-width: 160px;
+    }
+
+    .hero {
+        min-height: 430px;
+        padding: 45px 6%;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero .lead {
+        font-size: 16px;
+    }
+}
+.whatsapp-logo {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+    display: block;
+}
+/* =========================
+   CONTACT INFORMATIE
+   ========================= */
+
+.contact-info {
+    margin: 0 7% 80px;
+    padding: 35px 40px;
+    background: #17191d;
+    color: #fff;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1.4fr;
+    gap: 30px;
+    align-items: center;
+    border-top: 2px solid #d7a52a;
+    border-bottom: 1px solid #333;
+
+}
+
+.contact-info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.contact-info-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: 800;
+    color: #d7a52a;
+}
+
+.contact-info-item strong {
+    font-size: 20px;
+    color: #fff;
+}
+
+.contact-info-item p {
+    margin: 0;
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.contact-info-item a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.contact-info-item a:hover {
+    color: #d7a52a;
+}
+
+
+/* =========================
+   CONTACT INFO MOBIEL
+   ========================= */
+
+@media (max-width: 768px) {
+
+    .contact-info {
+        margin: 0 20px 60px;
+        padding: 30px 25px;
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .contact-info-item strong {
+        font-size: 19px;
+    }
+
+    .contact-info-item a {
+        font-size: 16px;
+    }
+}
