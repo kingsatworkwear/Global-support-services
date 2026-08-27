@@ -830,39 +830,19 @@ footer p {
     footer p {
         font-size: 13px;
     }
-/* =========================
-   ZWEVENDE WHATSAPP KNOP
-   ========================= */
 
-.whatsapp-float {
-  position: fixed;
-  right: 24px;
-  bottom: 24px;
-  width: 60px;
-  height: 60px;
-  z-index: 9999;
-  display: block;
-}
 
-.whatsapp-float img {
-  width: 60px;
-  height: 60px;
-  display: block;
-  object-fit: contain;
-}
+    /* WHATSAPP OP MOBIEL */
 
-/* MOBIEL */
+    .whatsapp-float {
+        right: 16px;
+        bottom: 16px;
+        width: 56px;
+        height: 56px;
+    }
 
-@media (max-width: 768px) {
-  .whatsapp-float {
-    right: 16px;
-    bottom: 16px;
-    width: 56px;
-    height: 56px;
-  }
-
-  .whatsapp-float img {
-    width: 56px;
-    height: 56px;
-  }
+    .whatsapp-float img {
+        width: 56px;
+        height: 56px;
+    }
 }
