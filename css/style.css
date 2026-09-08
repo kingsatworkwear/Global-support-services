@@ -15,6 +15,11 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     color: #20232a;
     background: #fff;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
 }
 
 
@@ -109,6 +114,7 @@ body {
     color: #fff !important;
     padding: 14px 22px;
     border-radius: 28px;
+    text-decoration: none;
 }
 
 
@@ -229,7 +235,7 @@ body {
 .cards {
     padding: 0 7% 80px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 18px;
 }
 
@@ -250,11 +256,32 @@ body {
     box-shadow: 0 14px 30px rgba(0, 0, 0, 0.10);
 }
 
+.cards article a,
+.cards article a:visited,
+.cards article a:hover,
+.cards article a:active {
+    display: block;
+    height: 100%;
+    color: inherit;
+    text-decoration: none !important;
+}
+
+.cards article a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+.cards article a:hover {
+    color: inherit;
+    text-decoration: none;
+}
+
 .cards article h3 {
     margin: 10px 0 12px;
     font-size: 22px;
     line-height: 1.2;
     color: #222;
+    text-decoration: none;
 }
 
 .cards article p {
@@ -262,6 +289,7 @@ body {
     color: #555;
     font-size: 16px;
     line-height: 1.6;
+    text-decoration: none;
 }
 
 .cards article span,
@@ -309,6 +337,13 @@ body {
     line-height: 1.05;
 }
 
+.page-head p:not(.eyebrow) {
+    font-size: 18px;
+    color: #ddd;
+    line-height: 1.6;
+    max-width: 700px;
+}
+
 .service-list {
     padding: 15px 7% 90px;
     display: grid;
@@ -338,6 +373,106 @@ body {
     margin: 0;
     color: #666;
     line-height: 1.6;
+}
+
+
+/* =========================
+   DETAILPAGINA DIENST
+   ========================= */
+
+.service-detail {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 75px 40px 90px;
+}
+
+.service-detail h2 {
+    font-size: 34px;
+    line-height: 1.25;
+    margin: 0 0 18px;
+    color: #20232a;
+}
+
+.service-detail p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #555;
+    margin: 0 0 22px;
+    max-width: 850px;
+}
+
+.service-detail ul {
+    list-style: none;
+    padding: 0;
+    margin: 25px 0 55px;
+    max-width: 850px;
+}
+
+.service-detail li {
+    padding: 13px 0;
+    border-bottom: 1px solid #eee;
+    color: #444;
+    font-size: 16px;
+}
+
+.service-detail li::before {
+    content: none;
+}
+
+
+/* =========================
+   DETAIL CTA
+   ========================= */
+
+.service-cta {
+    margin-top: 60px;
+    padding: 45px;
+    background: #17191d;
+    border-top: 2px solid #d7a52a;
+    color: #fff;
+}
+
+.service-cta h2 {
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.service-cta p {
+    color: #ccc;
+    margin-bottom: 25px;
+}
+
+.service-cta .cta {
+    display: inline-block;
+    text-decoration: none;
+}
+
+
+/* =========================
+   SERVICE LINKS
+   ========================= */
+
+.service-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.service-link:visited {
+    color: inherit;
+}
+
+.service-link article {
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.service-link:hover article {
+    transform: translateX(5px);
+}
+
+.service-link:hover h2 {
+    color: #c79822;
 }
 
 
@@ -440,9 +575,6 @@ textarea {
     font-family: inherit;
     font-size: 16px;
     outline: none;
-    transition:
-        border-color 0.2s ease,
-        box-shadow 0.2s ease;
 }
 
 .contact-form textarea {
@@ -552,40 +684,31 @@ footer p {
 }
 
 
-/* =====================================================
-   ZWEVENDE WHATSAPP KNOP
-   ===================================================== */
+/* =========================
+   WHATSAPP
+   ========================= */
 
 .whatsapp-float {
     position: fixed;
     right: 25px;
     bottom: 25px;
-
     width: 60px;
     height: 60px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     z-index: 99999;
-
     text-decoration: none;
-
     background: transparent;
     border-radius: 50%;
-
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-
     transition: transform 0.2s ease;
 }
 
 .whatsapp-float img {
     width: 60px;
     height: 60px;
-
     display: block;
-
     object-fit: contain;
 }
 
@@ -624,19 +747,12 @@ footer p {
 
 @media (max-width: 768px) {
 
-    /* HEADER */
-
     .header {
         width: 100%;
         height: 70px;
         min-height: 70px;
         padding: 8px 12px;
         gap: 8px;
-        overflow: visible;
-    }
-
-    .brand {
-        flex-shrink: 0;
     }
 
     .header .brand img {
@@ -651,14 +767,11 @@ footer p {
         gap: 7px;
         flex: 1;
         min-width: 0;
-        overflow: visible;
     }
 
     .header nav a {
         display: inline-flex;
         align-items: center;
-        visibility: visible;
-        opacity: 1;
         font-size: 11px;
         font-weight: 600;
         white-space: nowrap;
@@ -724,7 +837,6 @@ footer p {
         width: 100%;
         min-height: auto;
         padding: 24px;
-        margin-bottom: 4px;
     }
 
     .cards article h3 {
@@ -772,6 +884,40 @@ footer p {
 
     .service-list article {
         padding: 30px 0;
+    }
+
+
+    /* DETAILPAGINA */
+
+    .service-detail {
+        width: 100%;
+        max-width: none;
+        padding: 50px 25px 70px;
+    }
+
+    .service-detail h2 {
+        font-size: 28px;
+        line-height: 1.25;
+    }
+
+    .service-detail p {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .service-detail li {
+        font-size: 15px;
+        padding: 12px 0;
+    }
+
+    .service-cta {
+        margin-top: 45px;
+        padding: 30px 25px;
+    }
+
+    .service-cta .cta {
+        display: block;
+        text-align: center;
     }
 
 
@@ -832,7 +978,7 @@ footer p {
     }
 
 
-    /* WHATSAPP OP MOBIEL */
+    /* WHATSAPP */
 
     .whatsapp-float {
         right: 16px;
@@ -844,134 +990,5 @@ footer p {
     .whatsapp-float img {
         width: 56px;
         height: 56px;
-    }
-}
-/* =========================
-   DETAILPAGINA DIENST
-   ========================= */
-
-.service-detail {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 70px 7% 90px;
-}
-
-.service-detail h2 {
-    font-size: 34px;
-    line-height: 1.2;
-    margin: 0 0 18px;
-    color: #20232a;
-}
-
-.service-detail p {
-    font-size: 17px;
-    line-height: 1.8;
-    color: #555;
-    margin: 0 0 22px;
-    max-width: 850px;
-}
-
-.service-detail ul {
-    list-style: none;
-    padding: 0;
-    margin: 25px 0 55px;
-    max-width: 850px;
-}
-
-.service-detail li {
-    position: relative;
-    padding: 15px 20px 15px 35px;
-    border-bottom: 1px solid #eee;
-    color: #444;
-    font-size: 16px;
-}
-
-.service-detail li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: #c79822;
-    font-weight: 800;
-}
-
-.service-cta {
-    margin-top: 60px;
-    padding: 45px;
-    background: #17191d;
-    border-top: 2px solid #d7a52a;
-    color: #fff;
-}
-
-.service-cta h2 {
-    color: #fff;
-    margin-bottom: 12px;
-}
-
-.service-cta p {
-    color: #ccc;
-    margin-bottom: 25px;
-}
-
-.service-cta .cta {
-    display: inline-block;
-    text-decoration: none;
-}
-
-
-/* =========================
-   DIENSTEN - KLIKBAAR
-   ========================= */
-
-.service-link {
-    display: block;
-    color: inherit;
-    text-decoration: none;
-}
-
-.service-link article {
-    transition: transform 0.2s ease, background 0.2s ease;
-}
-
-.service-link:hover article {
-    transform: translateX(5px);
-}
-
-.service-link:hover h2 {
-    color: #c79822;
-}
-
-
-/* =========================
-   DETAILPAGINA - MOBIEL
-   ========================= */
-
-@media (max-width: 768px) {
-
-    .service-detail {
-        padding: 50px 6% 70px;
-    }
-
-    .service-detail h2 {
-        font-size: 28px;
-    }
-
-    .service-detail p {
-        font-size: 16px;
-        line-height: 1.7;
-    }
-
-    .service-detail li {
-        font-size: 15px;
-        padding: 14px 15px 14px 30px;
-    }
-
-    .service-cta {
-        margin-top: 45px;
-        padding: 30px 25px;
-    }
-
-    .service-cta .cta {
-        display: block;
-        text-align: center;
     }
 }
